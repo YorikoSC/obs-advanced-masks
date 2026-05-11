@@ -1564,9 +1564,6 @@ static void render_rectangle_mask(mask_shape_data_t *data,
 	const enum gs_color_space source_space = obs_source_get_color_space(
 		obs_filter_get_target(base->context),
 		OBS_COUNTOF(preferred_spaces), preferred_spaces);
-	if (source_space == GS_CS_709_EXTENDED) {
-		obs_source_skip_video_filter(base->context);
-	}
 	const char *technique =
 		base->mask_effect == MASK_EFFECT_ALPHA && !data->frame_check
 			? "Alpha"
@@ -2128,9 +2125,6 @@ static void render_polygon_mask(mask_shape_data_t *data,
 	const enum gs_color_space source_space = obs_source_get_color_space(
 		obs_filter_get_target(base->context),
 		OBS_COUNTOF(preferred_spaces), preferred_spaces);
-	if (source_space == GS_CS_709_EXTENDED) {
-		obs_source_skip_video_filter(base->context);
-	}
 	const char *technique =
 		base->mask_effect == MASK_EFFECT_ALPHA && !data->frame_check
 			? "Alpha"
@@ -2260,9 +2254,6 @@ static void render_star_mask(mask_shape_data_t *data, base_filter_data_t *base,
 	const enum gs_color_space source_space = obs_source_get_color_space(
 		obs_filter_get_target(base->context),
 		OBS_COUNTOF(preferred_spaces), preferred_spaces);
-	if (source_space == GS_CS_709_EXTENDED) {
-		obs_source_skip_video_filter(base->context);
-	}
 	const char *technique =
 		base->mask_effect == MASK_EFFECT_ALPHA && !data->frame_check
 			? "Alpha"
@@ -2386,9 +2377,6 @@ static void render_circle_mask(mask_shape_data_t *data,
 	const enum gs_color_space source_space = obs_source_get_color_space(
 		obs_filter_get_target(base->context),
 		OBS_COUNTOF(preferred_spaces), preferred_spaces);
-	if (source_space == GS_CS_709_EXTENDED) {
-		obs_source_skip_video_filter(base->context);
-	}
 	const char *technique =
 		base->mask_effect == MASK_EFFECT_ALPHA && !data->frame_check
 			? "Alpha"
@@ -2504,9 +2492,6 @@ static void render_heart_mask(mask_shape_data_t *data, base_filter_data_t *base,
 	const enum gs_color_space source_space = obs_source_get_color_space(
 		obs_filter_get_target(base->context),
 		OBS_COUNTOF(preferred_spaces), preferred_spaces);
-	if (source_space == GS_CS_709_EXTENDED) {
-		obs_source_skip_video_filter(base->context);
-	}
 	const char *technique =
 		base->mask_effect == MASK_EFFECT_ALPHA && !data->frame_check
 			? "Alpha"
@@ -2629,9 +2614,6 @@ static void render_ellipse_mask(mask_shape_data_t *data,
 	const enum gs_color_space source_space = obs_source_get_color_space(
 		obs_filter_get_target(base->context),
 		OBS_COUNTOF(preferred_spaces), preferred_spaces);
-	if (source_space == GS_CS_709_EXTENDED) {
-		obs_source_skip_video_filter(base->context);
-	}
 	const char *technique =
 		base->mask_effect == MASK_EFFECT_ALPHA && !data->frame_check
 			? "Alpha"
@@ -2761,9 +2743,6 @@ static void render_superfunction_mask(mask_shape_data_t *data,
 	const enum gs_color_space source_space = obs_source_get_color_space(
 		obs_filter_get_target(base->context),
 		OBS_COUNTOF(preferred_spaces), preferred_spaces);
-	if (source_space == GS_CS_709_EXTENDED) {
-		obs_source_skip_video_filter(base->context);
-	}
 	const char *technique =
 		base->mask_effect == MASK_EFFECT_ALPHA && !data->frame_check
 			? "Alpha"

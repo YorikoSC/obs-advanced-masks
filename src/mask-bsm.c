@@ -273,7 +273,8 @@ static void render_bsm_alpha_mask(mask_bsm_data_t *data, base_filter_data_t *bas
 	base->output_texrender = tmp;
 
 	base->output_texrender =
-		create_or_reset_texrender(base->output_texrender);
+		create_or_reset_texrender_format(base->output_texrender,
+						 base->source_format);
 
 	gs_texrender_t *mask_source_render = get_mask_source_render(data, base);
 	if (!mask_source_render) {
@@ -292,8 +293,9 @@ static void render_bsm_alpha_mask(mask_bsm_data_t *data, base_filter_data_t *bas
 		dstr_cat(&technique, "Freeze");
 	}
 
-	if (gs_texrender_begin(base->output_texrender, base->width,
-			       base->height)) {
+	if (gs_texrender_begin_with_color_space(base->output_texrender,
+						base->width, base->height,
+						base->source_space)) {
 		gs_ortho(0.0f, (float)base->width, 0.0f, (float)base->height,
 			 -100.0f, 100.0f);
 		while (gs_effect_loop(effect, technique.array))
@@ -321,7 +323,8 @@ static void render_bsm_adjustment_mask(mask_bsm_data_t *data, base_filter_data_t
 		create_or_reset_texrender(data->bsm_mask_texrender);
 
 	base->output_texrender =
-		create_or_reset_texrender(base->output_texrender);
+		create_or_reset_texrender_format(base->output_texrender,
+						 base->source_format);
 
 	gs_texrender_t *mask_source_render = get_mask_source_render(data, base);
 	if (!mask_source_render) {
@@ -361,8 +364,9 @@ static void render_bsm_adjustment_mask(mask_bsm_data_t *data, base_filter_data_t
 
 	set_blending_parameters();
 
-	if (gs_texrender_begin(base->output_texrender, base->width,
-			       base->height)) {
+	if (gs_texrender_begin_with_color_space(base->output_texrender,
+						base->width, base->height,
+						base->source_space)) {
 		gs_ortho(0.0f, (float)base->width, 0.0f, (float)base->height,
 			 -100.0f, 100.0f);
 		while (gs_effect_loop(effect, technique.array))
