@@ -681,9 +681,7 @@ void MaskFontAwesomeFilter::render(base_filter_data_t* base, color_adjustments_d
 		}
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 
 		obs_source_process_filter_tech_end(
 			base->context, _effect_svg_mask, 0, 0, technique);

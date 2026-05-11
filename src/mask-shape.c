@@ -2096,9 +2096,7 @@ static void render_rectangle_mask(mask_shape_data_t *data,
 		gs_effect_set_vec2(data->param_rectangle_uv_size, &uv_size);
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 		obs_source_process_filter_tech_end(base->context,
 						   data->effect_rectangle_mask,
 						   0, 0, technique);
@@ -2226,9 +2224,7 @@ static void render_polygon_mask(mask_shape_data_t *data,
 		gs_effect_set_vec2(data->param_polygon_uv_size, &uv_size);
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 		obs_source_process_filter_tech_end(base->context,
 						   data->effect_polygon_mask, 0,
 						   0, technique);
@@ -2349,9 +2345,7 @@ static void render_star_mask(mask_shape_data_t *data, base_filter_data_t *base,
 		gs_effect_set_vec2(data->param_star_uv_size, &uv_size);
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 		obs_source_process_filter_tech_end(
 			base->context, data->effect_star_mask, 0, 0, technique);
 		gs_blend_state_pop();
@@ -2464,9 +2458,7 @@ static void render_circle_mask(mask_shape_data_t *data,
 		gs_effect_set_vec2(data->param_circle_uv_size, &uv_size);
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 		obs_source_process_filter_tech_end(base->context,
 						   data->effect_circle_mask, 0,
 						   0, technique);
@@ -2585,9 +2577,7 @@ static void render_heart_mask(mask_shape_data_t *data, base_filter_data_t *base,
 		gs_effect_set_vec2(data->param_heart_uv_size, &uv_size);
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 		obs_source_process_filter_tech_end(base->context,
 						   data->effect_heart_mask, 0,
 						   0, technique);
@@ -2705,9 +2695,7 @@ static void render_ellipse_mask(mask_shape_data_t *data,
 		gs_effect_set_vec2(data->param_ellipse_uv_size, &uv_size);
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 		obs_source_process_filter_tech_end(base->context,
 						   data->effect_ellipse_mask, 0,
 						   0, technique);
@@ -2839,9 +2827,7 @@ static void render_superfunction_mask(mask_shape_data_t *data,
 		gs_effect_set_vec2(data->param_super_uv_size, &uv_size);
 
 		gs_blend_state_push();
-		gs_blend_function_separate(GS_BLEND_SRCALPHA,
-					   GS_BLEND_INVSRCALPHA, GS_BLEND_ONE,
-					   GS_BLEND_INVSRCALPHA);
+		gs_blend_function(GS_BLEND_ONE, GS_BLEND_INVSRCALPHA);
 		obs_source_process_filter_tech_end(base->context,
 						   data->effect_super_mask, 0,
 						   0, technique);
